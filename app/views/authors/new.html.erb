@@ -3,17 +3,17 @@
 <%= form_for :author, url: authors_path do |f| %>
   <p>
     <%= f.label :'First name' %><br>
-    <%= f.text_field :'First name' %>
+    <%= f.text_field :first_name %>
   </p>
 
   <p>
     <%= f.label :'Last name' %><br>
-    <%= f.text_field :'Last name' %>
+    <%= f.text_field :last_name %>
   </p>
 
   <p>
     <%= f.label :'Homepage' %><br>
-    <%= f.text_field :'Homepage' %>
+    <%= f.text_field :website %>
   </p>
 
   <p>

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "Author model", type: :model do
 
     it "should get created with correct data" do
-        author = Author.new("Alan", "Turing", "http://wikipedia.org/Alan_Turing")
+        author = Author.new(first_name: "Alan", last_name: "Turing", website: "http://wikipedia.org/Alan_Turing")
 
         expect(author.first_name).to eq("Alan")
         expect(author.last_name).to eq("Turing")
