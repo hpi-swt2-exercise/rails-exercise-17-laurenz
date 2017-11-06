@@ -22,7 +22,7 @@ describe "New author page", type: :feature do
 
         click_button 'Save Author'
 
-        expect(page).to have_content("last name can't be blank")
+        expect(page).to have_content("Last name can't be blank")
     end
 
     it "should accept when all data is provided" do
@@ -34,6 +34,6 @@ describe "New author page", type: :feature do
 
         click_button 'Save Author'
 
-        expect(page).to have_no_content("last name can't be blank")
+        expect(page).to have_no_content("Last name can't be blank")
     end
 end
