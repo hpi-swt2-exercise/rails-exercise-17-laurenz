@@ -20,7 +20,7 @@ describe "New author page", type: :feature do
         fill_in 'First name', with: 'Alan'
         fill_in 'Homepage', with: 'http://wikipedia.de/Alan_Turing'
 
-        click_button 'Save Author'
+        click_button 'Create Author'
 
         expect(page).to have_content("Last name can't be blank")
     end
@@ -32,7 +32,7 @@ describe "New author page", type: :feature do
         fill_in 'Homepage', with: 'http://wikipedia.de/Alan_Turing'
         fill_in 'Last name', with: 'Turing'
 
-        click_button 'Save Author'
+        click_button 'Create Author'
 
         expect(page).to have_no_content("Last name can't be blank")
     end

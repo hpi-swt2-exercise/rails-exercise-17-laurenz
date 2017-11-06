@@ -7,7 +7,7 @@ describe "Edit author page", type: :feature do
         visit edit_author_path(author)
 
         fill_in 'Last name', with: 'Torengo'
-        click_button 'Save Author'
+        click_button 'Update Author'
     end
 
 end
