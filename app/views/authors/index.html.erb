@@ -2,15 +2,13 @@
 
 <table>
   <tr>
-    <th>First name</th>
-    <th>Last name</th>
+    <th>Name</th>
     <th>Homepage</th>
   </tr>
 
   <% @author.each do |author| %>
     <tr>
-      <td><%= author.first_name %></td>
-      <td><%= author.last_name %></td>
+      <td><%= author.name %></td>
       <td><%= author.homepage %></td>
     </tr>
   <% end %>
