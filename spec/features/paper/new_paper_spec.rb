@@ -28,4 +28,15 @@ describe "New author page", type: :feature do
         expect(page).to have_content("Venue can't be blank")
     end
 
+    it "should not validate without year" do
+        visit new_paper_path
+
+        fill_in 'Title', with: 'The Making Of Salsa'
+        fill_in 'Venue', with: 'Evergreen Terrace'
+
+        click_button 'Create Paper'
+
+        expect(page).to have_content("Year can't be blank")
+    end
+
 end
