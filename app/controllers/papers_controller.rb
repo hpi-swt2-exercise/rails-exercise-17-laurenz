@@ -1,4 +1,7 @@
 class PapersController < ApplicationController
+    def index
+        @paper = Paper.all
+    end
 
     def show
         @paper = Paper.find(params[:id])

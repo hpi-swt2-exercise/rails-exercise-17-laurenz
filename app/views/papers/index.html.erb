@@ -1,0 +1,21 @@
+<h1>All Papers</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Venue</th>
+    <th>Year</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <% @paper.each do |paper| %>
+    <tr>
+      <td><%= paper.title %></td>
+      <td><%= paper.year %></td>
+      <td><%= paper.venue %></td>
+      <td></td>
+    </tr>
+  <% end %>
+
+  <%= link_to 'Add paper', new_paper_path %>
+</table>
