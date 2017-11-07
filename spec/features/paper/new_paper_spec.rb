@@ -12,7 +12,7 @@ describe "New author page", type: :feature do
         fill_in 'Venue', with: 'Evergreen Terrace'
         fill_in 'Year', with: '1928'
 
-        click_button 'Save Paper'
+        click_button 'Create Paper'
 
         expect(page).to have_content("Title can't be blank")
     end
