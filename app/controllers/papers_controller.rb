@@ -8,6 +8,10 @@ class PapersController < ApplicationController
         @paper = Paper.new
     end
 
+    def edit
+        @paper = Paper.find(params[:id])
+    end
+
     def create
         @paper = Paper.new(paper_params)
 
@@ -20,7 +24,7 @@ class PapersController < ApplicationController
 
     private
     def paper_params
-        params.require(:author).permit(:title, :venue, :year)
+        params.require(:paper).permit(:title, :venue, :year)
     end
 
 end
