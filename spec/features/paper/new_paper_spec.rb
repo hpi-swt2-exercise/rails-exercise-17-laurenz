@@ -6,7 +6,7 @@ describe "New author page", type: :feature do
         visit new_paper_path
     end
 
-    it "should show validation error" do
+    it "should not validate without title" do
         visit new_paper_path
 
         fill_in 'Venue', with: 'Evergreen Terrace'
@@ -15,6 +15,17 @@ describe "New author page", type: :feature do
         click_button 'Create Paper'
 
         expect(page).to have_content("Title can't be blank")
+    end
+
+    it "should not validate without venue" do
+        visit new_paper_path
+
+        fill_in 'Title', with: 'The Making Of Salsa'
+        fill_in 'Year', with: '1928'
+
+        click_button 'Create Paper'
+
+        expect(page).to have_content("Venue can't be blank")
     end
 
 end
