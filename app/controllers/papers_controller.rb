@@ -25,6 +25,23 @@ class PapersController < ApplicationController
         end
     end
 
+    def update
+        @paper = Paper.find(params[:id])
+
+        if @paper.update(paper_params)
+            redirect_to @paper
+        else
+            render 'edit'
+        end
+    end
+
+    def destroy
+        @paper = Paper.find(params[:id])
+        @paper.destroy
+
+        redirect_to papers_path
+    end
+
     private
     def paper_params
         params.require(:paper).permit(:title, :venue, :year)
