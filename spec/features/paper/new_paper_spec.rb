@@ -39,4 +39,16 @@ describe "New author page", type: :feature do
         expect(page).to have_content("Year can't be blank")
     end
 
+    it "should not accept non-integer years" do
+        visit new_paper_path
+
+        fill_in 'Title', with: 'The Making Of Salsa'
+        fill_in 'Venue', with: 'Evergreen Terrace'
+        fill_in 'Year', with: 'Fifth Century before Christ'
+
+        click_button 'Create Paper'
+
+        expect(page).to have_content("Year is not a number")
+    end
+
 end
