@@ -1,4 +1,5 @@
 class Author < ActiveRecord::Base
+    has_many :comments
     validates :last_name, presence: true
 
     def name

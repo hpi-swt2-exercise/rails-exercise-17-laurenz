@@ -47,5 +47,4 @@ describe "Author index page", type: :feature do
         expect(page).to have_no_content(author.homepage)
     end
 
-
 end
