@@ -11,7 +11,7 @@ describe "Paper page", type: :feature do
         expect(page).to have_content(paper.year)
     end
 
-    it "should list all authors" do
+    it "should list authors" do
         author = FactoryGirl.create :author
         paper = FactoryGirl.create :paper
         paper.authors << author
