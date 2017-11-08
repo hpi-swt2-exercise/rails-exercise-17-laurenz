@@ -18,7 +18,7 @@
 </p>
 
 <% @paper.authors.each do |author| %>
-    <%= author.name %>
+    <%= author.name %><br>
 <% end %>
 
 <%= link_to 'Add paper', new_paper_path %>
