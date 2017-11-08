@@ -24,4 +24,11 @@ describe "Author model", type: :model do
         expect(valid).to eq(true)
     end
 
+    it "should be able to have many papers" do
+        author = FactoryGirl.create :author
+        paper = FactoryGirl.create :paper
+
+        author.papers << paper
+    end
+
 end
