@@ -29,4 +29,15 @@ describe "Paper index page", type: :feature do
         expect(page).to have_link("Edit")
     end
 
+    it "should allow filtering papers" do
+        oldPaper = Paper.new(title: "Everything Is Black And White", venue: "TrackMeDownValley", year: 1950)
+        oldPaper.save
+        newPaper = Paper.new(title: "Everything Is Colorful", venue: "WhereAmI", year: 1951)
+        newPaper.save
+        visit papers_path+"?year=1950"
+
+        expect(page).to have_content(oldPaper.title)
+        expect(page).to have_no_content(newPaper.title)
+    end
+
 end
