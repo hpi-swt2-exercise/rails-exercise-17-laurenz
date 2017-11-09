@@ -1,6 +1,10 @@
 class PapersController < ApplicationController
     def index
-        @paper = Paper.all
+        if params.key?(:year)
+            @paper = Paper.all.year_until(params[:year])
+        else
+            @paper = Paper.all
+        end
     end
 
     def show
