@@ -29,9 +29,6 @@
       <%= f.text_field :'year' %>
   </p>
 
-  <%= f.label "Author 1", for: "paper_author_id_1" %>
-  <%= f.collection_select :authors, @authors, :id, :name, {selected: @ids[0], include_blank: '(none)'}, {name: "paper[authors]", id: "paper_author_id_1"} %>
-
   <p>
       <%= f.submit %>
   </p>
